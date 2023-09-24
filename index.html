@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piscis Aquarium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/logo.png">
+</head>
+<body>
+    <header id="navbar">
+        <a href="#" class="logo"><img src="Images/logo.png"></a>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li class="drop_btn">
+                <a href="#category">Category</a>
+                <div class="dropdown">
+                    <a href="shellfish.html">Shellfish</a>
+                    <a href="coral.html">Corals</a>
+                    <a href="mammal.html">Mammals</a>
+                    <a href="fish.html">Fishes</a>
+                    <a href="reptile.html">Reptiles</a>
+                    <a href="shark.html">Sharks</a>
+                </div>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section id="home">
+        <img src="Images/homebg.png" id="homebg">
+        <h1 id="home_text">Piscis Aquarium</h1>
+        <a href="#category" id="explore">Explore</a>
+        <img src="Images/homefg.png" id="homefg">
+    </section>
+    <section id="category">
+        <h1>
+            What are you interested in?
+        </h1>
+        <div class="category">
+            <a href="shellfish.html" class="content"><img src="Images/shellfish.jpg"><div class="content_title">Shellfish</div></a>
+            <a href="coral.html" class="content"><img src="Images/coral.jpg"><div class="content_title">Corals</div></a>
+            <a href="mammal.html" class="content"><img src="Images/mammal.jpg"><div class="content_title">Mammals</div></a>
+            <a href="fish.html" class="content"><img src="Images/fish.jpg"><div class="content_title">Fishes</div></a>
+            <a href="reptile.html" class="content"><img src="Images/reptiles.jpg"><div class="content_title">Reptiles</div></a>
+            <a href="shark.html" class="content"><img src="Images/sharks.jpg"><div class="content_title">Sharks</div></a>
+        </div>
+    </section>
+    <section id="footer">
+        <div id="about">
+            <h1>About Us</h1>
+            <p>Piscis Aquarium is an article dedicated to all the animals found in, on and around the world's oceans. We're here to share our knowledge on ocean life with people who are interested in learning more! We're excited to share our love of marine life with you.</p>
+        </div>
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <div class="container">
+                <div class="social">
+                    <h2>Social Media</h2>
+                    <a href="https://www.instagram.com/devyivana_/" target="_blank"><img src="Images/instagram.png"></a>
+                    <a href="https://www.facebook.com/krisvy.devy/" target="_blank"><img src="Images/facebook.png"></a>
+                    <a href="https://twitter.com/keaidaqiu/" target="_blank"><img src="Images/twitter.png"></a>
+                </div>
+                <div class="connector">or</div>
+                <div class="feed_button">
+                    <h2>Leave A Feedback</h2>
+                    <a href="feedback.html">To Feedback Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="copyright">©2022 - Present</div>
+    <script>
+        let homebg = document.getElementById("homebg");
+        let home_text = document.getElementById("home_text");
+        let button = document.getElementById("explore");
+        window.addEventListener("scroll", function(){
+            let scrollY = window.scrollY;
+            homebg.style.top = scrollY*0.5+"px";
+            home_text.style.marginTop = scrollY*1.5+"px";
+            button.style.marginTop = scrollY*1.5+"px";
+        })
+        var prevScroll = window.pageYOffset;
+        window.onscroll = function(){
+            var currScroll = window.pageYOffset;
+            if (prevScroll > currScroll){
+                document.getElementById("navbar").style.top = "0";
+            }
+            else{
+                document.getElementById("navbar").style.top = "-120px";
+            }
+            prevScroll = currScroll;
+        }
+    </script>
+</body>
+</html>
